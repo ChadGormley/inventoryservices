@@ -18,17 +18,6 @@ public class InventoryServiceApplication {
         SpringApplication.run(InventoryServiceApplication.class, args);
     }
 
-    @Configuration
-    @EnableWebMvc
-    public class WebConfig implements WebMvcConfigurer {
-
-        @Override
-        public void addCorsMappings(CorsRegistry registry) {
-            registry.addMapping("/**");
-        }
-    }
-
-
 //    @Bean
 //    public WebMvcConfigurer corsConfigurer() {
 //        return new WebMvcConfigurerAdapter() {
@@ -36,21 +25,20 @@ public class InventoryServiceApplication {
 //            public void addCorsMappings(CorsRegistry registry) {
 //                String urls = env.getProperty("cors.urls");
 //                CorsRegistration reg = registry.addMapping("/api/**");
-//                for(String url: urls.split(",")) {
+//                for (String url : urls.split(",")) {
 //                    reg.allowedOrigins(url);
 //                }
 //            }
 //        };
-
-//        return new WebMvcConfigurer() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                String urls = env.getProperty("cors.urls");
-//                CorsRegistration reg = registry.addMapping("/api/**");
-//                for(String url: urls.split(",")) {
-//                    reg.allowedOrigins("url");
-//                }
-//            }
-//        };
 //    }
+
+        @Bean
+        public WebMvcConfigurer corsConfigurer() {
+            return new WebMvcConfigurer() {
+                @Override
+                public void addCorsMappings(CorsRegistry registry) {
+                    registry.addMapping("/api/**").allowedOrigins("http://localhost:3000");
+                }
+            };
+        }
 }
