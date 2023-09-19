@@ -44,7 +44,7 @@ public class InventoryServiceApplication {
                     //}
 
                     //registry.addMapping("/api/**").allowedOrigins("http://localhost:3000");
-                    registry.addMapping("/api/**").allowedOrigins("https://that-car-app-thatcarplace.apps.prft-cps.zuvk.p1.openshiftapps.com");
+                    registry.addMapping("/api/**").allowedOrigins("https://that-car-app-dev-thatcarplace.apps.prft-cps.zuvk.p1.openshiftapps.com");
                 }
             };
         }
