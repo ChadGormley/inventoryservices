@@ -42,7 +42,7 @@ public class InventoryServiceApplication {
                     //for (String url : urls.split(",")) {
                     //    reg.allowedOrigins(url);
                     //}
-                    registry.addMapping("/api/**").allowedOrigins("http://localhost:3000,https://that-car-app-thatcarplace.apps.prft-cps.zuvk.p1.openshiftapps.com");
+                    registry.addMapping("/api/**").allowedOrigins("http://localhost:3000");
                 }
             };
         }
