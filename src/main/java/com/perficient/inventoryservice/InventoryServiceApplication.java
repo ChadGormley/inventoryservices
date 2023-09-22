@@ -23,14 +23,11 @@ public class InventoryServiceApplication {
             return new WebMvcConfigurer() {
                 @Override
                 public void addCorsMappings(CorsRegistry registry) {
-                    //String urls = env.getProperty("cors.urls");
-                    //CorsRegistration reg = registry.addMapping("/api/**");
-                    //for (String url : urls.split(",")) {
-                    //    reg.allowedOrigins(url);
-                    //}
-
+                    String urls = env.getProperty("cors.urls");
+                    CorsRegistration reg = registry.addMapping("/api/**");
+                    reg.allowedOrigins(urls.split(","));
                     //registry.addMapping("/api/**").allowedOrigins("http://localhost:3000");
-                    registry.addMapping("/api/**").allowedOrigins("https://that-car-app-dev-thatcarplace.apps.prft-cps.zuvk.p1.openshiftapps.com");
+                    //registry.addMapping("/api/**").allowedOrigins("https://that-car-app-dev-thatcarplace.apps.prft-cps.zuvk.p1.openshiftapps.com");
                 }
             };
         }
