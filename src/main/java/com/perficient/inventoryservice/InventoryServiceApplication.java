@@ -18,20 +18,6 @@ public class InventoryServiceApplication {
         SpringApplication.run(InventoryServiceApplication.class, args);
     }
 
-//    @Bean
-//    public WebMvcConfigurer corsConfigurer() {
-//        return new WebMvcConfigurerAdapter() {
-//            @Override
-//            public void addCorsMappings(CorsRegistry registry) {
-//                String urls = env.getProperty("cors.urls");
-//                CorsRegistration reg = registry.addMapping("/api/**");
-//                for (String url : urls.split(",")) {
-//                    reg.allowedOrigins(url);
-//                }
-//            }
-//        };
-//    }
-
         @Bean
         public WebMvcConfigurer corsConfigurer() {
             return new WebMvcConfigurer() {

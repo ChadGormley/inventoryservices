@@ -20,7 +20,8 @@ public class VehicleController {
     }
 
     @GetMapping
-    public ResponseEntity<VehicleListDTO> getAllVehicles() {
+    public ResponseEntity<VehicleListDTO> getAllVehicles() throws InterruptedException {
+        Thread.sleep(1000);
         return new ResponseEntity<VehicleListDTO>(
                 new VehicleListDTO(vehicleService.getVehicleList()), HttpStatus.OK
         );
@@ -34,7 +35,8 @@ public class VehicleController {
     }
 
     @PostMapping
-    public ResponseEntity<VehicleDTO> saveNewVehicle(@RequestBody VehicleDTO vehicleDTO) {
+    public ResponseEntity<VehicleDTO> saveNewVehicle(@RequestBody VehicleDTO vehicleDTO) throws InterruptedException {
+        Thread.sleep(1000);
         return new ResponseEntity<VehicleDTO>(
                 vehicleService.createNewVehicle(vehicleDTO), HttpStatus.CREATED
         );
