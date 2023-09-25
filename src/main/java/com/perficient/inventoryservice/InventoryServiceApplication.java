@@ -26,8 +26,6 @@ public class InventoryServiceApplication {
                     String urls = env.getProperty("cors.urls");
                     CorsRegistration reg = registry.addMapping("/api/**");
                     reg.allowedOrigins(urls.split(","));
-                    //registry.addMapping("/api/**").allowedOrigins("http://localhost:3000");
-                    //registry.addMapping("/api/**").allowedOrigins("https://that-car-app-dev-thatcarplace.apps.prft-cps.zuvk.p1.openshiftapps.com");
                 }
             };
         }
